@@ -14,7 +14,7 @@ export default function Loader() {
         alignItems: 'center',
         background: 'rgba(0, 0, 0, 0.5)',
         backdropFilter: 'blur(3px)',
-        zIndex: 1,
+        zIndex: 99,
       }}
     >
       <ThreeCircles

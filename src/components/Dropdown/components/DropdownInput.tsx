@@ -13,21 +13,28 @@ export default function DropdownInput({ filterValueHandler, option, startValue, 
 
 
     return (
-        <input
-            onKeyUp={(e) => {
-                if (e.key === ' ') { e.preventDefault() }
-            }}
-            onClick={(e) => { e.stopPropagation() }}
-            className={styles.searchInput}
-            type="text"
-            onChange={filterValueHandler}
-            placeholder={
-                option === startValue ? label : (
-                    Array.isArray(option) ? placeholder : option
-                )
-            }
-            value={filterValue}
-            autoFocus
-        />
-    )
+      <input
+        onKeyUp={e => {
+          if (e.key === ' ') {
+            e.preventDefault();
+          }
+        }}
+        onClick={e => {
+          e.stopPropagation();
+        }}
+        className={styles.searchInput}
+        type="text"
+        onChange={filterValueHandler}
+        placeholder={
+          option === startValue
+            ? label
+            : Array.isArray(option)
+            ? placeholder
+            : option
+        }
+        value={filterValue}
+        autoFocus
+        readOnly={startValue === 'Сортування'}
+      />
+    );
 }

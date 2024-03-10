@@ -1,0 +1,48 @@
+@import '/src/styles/main.scss';
+
+.inputBlokResult {
+  width: 320px;
+
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include onTablet {
+    width: 400px;
+  }
+}
+.priceLeft,
+.priceRight {
+  width: 154px;
+  height: 40px;
+  padding-left: 28px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #f0f0f0;
+  border-radius: 32px;
+  border: none;
+  outline: none;
+  @include onTablet {
+    width: 188px;
+  }
+}
+.inputBlokRange {
+  display: flex;
+  width: 320px;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  @include onTablet {
+    width: 400px;
+  }
+}
+.centralDivider {
+  width: 8px;
+  height: 1px;
+  background: black;
+  @include onTablet {
+    width: 12px;
+  }
+}
+

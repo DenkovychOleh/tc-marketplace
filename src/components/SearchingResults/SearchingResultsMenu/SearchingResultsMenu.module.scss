@@ -1,0 +1,61 @@
+@import '/src/styles/main.scss';
+
+.container {
+  width: 100%;
+  height: 164px;
+  background-color: $background-color-white;
+  padding: 20px 20px 20px;
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 104px;
+    padding: 17px 40px 17px;
+  }
+}
+
+.title {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 37.5px;
+  margin-bottom: 16px;
+  @include onTablet {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 8px;
+  width: 100%;
+  height: 32px;
+}
+
+.filter {
+  padding: 6px 14px;
+  border-radius: 32px;
+  border: none;
+  background-color: $white-color;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  @include onTablet {
+    display: flex;
+  }
+  &::first-letter {
+    text-transform: uppercase;
+    @include onTablet {
+      text-transform: none;
+    }
+  }
+  .advFilter {
+    display: none;
+    @include onTablet {
+      display: block;
+      margin-right: 4px;
+    }
+  }
+}

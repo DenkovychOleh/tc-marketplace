@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
+import { setAuthHeaderForHide } from 'redux/filter/operations'; //!
 
 export type KnownError = {
   errorMessage: string;
@@ -63,6 +64,7 @@ export const logoutThunk = createAsyncThunk(
   try {
     await instance.post('authorization/logout');
     delAuthHeader();
+    setAuthHeaderForHide(''); //!
   } catch (err: any) {
     console.error('err',err);
     return thunkAPI.rejectWithValue({ errorMessage: 'Failed to log out' });

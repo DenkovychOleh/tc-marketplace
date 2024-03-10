@@ -3,6 +3,3 @@ export interface IUserDetails{
     photo: string,
     createdAt: string    
     }
-
-
-    

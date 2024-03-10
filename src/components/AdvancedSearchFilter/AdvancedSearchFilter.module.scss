@@ -1,0 +1,711 @@
+@import '../../styles/utils/variables';
+@import '/src/styles/main.scss';
+
+.AdvSearchFilter {
+  background: #ffff;
+  height: 100%;
+  &_container {
+    padding-top: 32px;
+    justify-content: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  &_title {
+    @include title-styles;
+  }
+}
+.itemdropdownbox {
+  width: 384px;
+}
+
+.AdvSearchFilter_box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  height: 88px;
+  margin-bottom: 32px;
+}
+.listItem {
+  width: 448px;
+  gap: 8px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.typeCarBody {
+  display: flex;
+  width: 688px;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+/*блок Бренд/Модель/Рік початок */
+.selectBrand {
+  display: flex;
+  width: 688px;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.listItemBrand {
+  width: 448px;
+  display: flex;
+}
+
+/*Тип палива*/
+.listTypeFuil {
+  display: flex;
+  justify-content: space-between;
+
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*Коробка передач */
+/*Колір */
+.listColor {
+  display: flex;
+  justify-content: space-between;
+
+  width: 688px;
+  margin-bottom: 32px;
+}
+.btnShowMore {
+  width: 139px;
+  height: 40px;
+  padding: 12px 10px;
+  color: #434343;
+  background-color: #feffff;
+  border-radius: 32px;
+  border: 1px solid #434343;
+}
+.btnShowMore:hover {
+  background-color: #e4e4e4;
+  color: #434343;
+}
+.selected {
+  background-color: #434343;
+  color: #feffff;
+}
+/*Технічний стан */
+.listTechCondition {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*пробіг*/
+.lisCarMileage {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+
+/*Потужність двигуна*/
+.listMotorPower {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*Привід*/
+.listMachineDrive {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*Кількість дверей */
+.howManyDoors {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*Кількість місць */
+.listNumberSeats {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*Кількість осей */
+.listNumberAxles {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*Конфігурація коліс */
+.listWheelConfiguration {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+/*Країна з якої достваили*/
+.listCountryDelivery {
+  display: flex;
+  justify-content: space-between;
+  width: 688px;
+  margin-bottom: 32px;
+}
+.itemdropdowncontainer {
+  width: 448px;
+}
+/*Заголовок*/
+.listSelectTitle {
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+  width: 688px;
+  margin-bottom: 32px;
+}
+.itemTypeYes {
+  position: absolute;
+  width: 187px;
+  height: 32px;
+  background-color: #f0f0f0;
+  padding: 6px 81px;
+  border-radius: 32px;
+  color: black;
+  & input {
+    display: none;
+  }
+  border: none;
+  top: 2px;
+  right: 2px;
+}
+.itemTypeNo {
+  position: absolute;
+  width: 187px;
+  height: 32px;
+  background-color: #f0f0f0;
+  padding: 6px 81px;
+  border-radius: 32px;
+  & input {
+    display: none;
+  }
+  border: none;
+  left: 2px;
+  top: 2px;
+  z-index: 1;
+  color: black;
+}
+.itemTypeNo:hover,
+.itemTypeYes:hover {
+  background-color: #e4e4e4;
+}
+.listItemSelectTitle {
+  position: relative;
+  width: 380px;
+  height: 36px;
+  border-radius: 32px;
+  background-color: #f0f0f0;
+}
+// блок з кнопками Показати - Скинути фільтр
+.resultFilter {
+  width: 100%;
+  height: 88px;
+  background: #797979;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.resultFilterShow {
+  letter-spacing: 0.15px;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 14px;
+  width: 124px;
+  height: 40px;
+  background: #797979;
+  border-radius: 32px;
+  padding-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 44px;
+  border: none;
+  color: #e4e4e4;
+  background-image: url('../../assets/icons/arrow-white.svg');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  text-decoration: underline;
+  text-decoration-color: #e4e4e4;
+}
+.resultFilterReset {
+  letter-spacing: 0.15px;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: underline;
+  text-decoration-color: #e4e4e4;
+  height: 40px;
+  background: inherit;
+  border-radius: 32px;
+  padding: 10px 16px;
+  border: none;
+  color: #e4e4e4;
+}
+.resultFilterShow:hover {
+  text-decoration: none;
+  background: #e4e4e4;
+  color: #434343;
+  background-image: url('../../assets/icons/vector-arrow-show.svg');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+.resultFilterReset:hover {
+  text-decoration: none;
+  background: #e4e4e4;
+  color: #434343;
+}
+/* Для экранов шириной 768px */
+@media screen and (min-width: 768px) {
+  .AdvSearchFilter {
+    &_container {
+      width: 768px;
+    }
+  }
+  .dropdownContainer {
+    width: 384px;
+  }
+}
+/* Медиа-запрос для экранов с шириной от 360px до 480px */
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .AdvSearchFilter {
+    &_container {
+      width: 360px;
+      max-width: 480px;
+      // padding-top: 32px;
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  .title {
+    position: relative;
+  }
+  .mobileButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/icons/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+  }
+  .list {
+    justify-content: unset;
+    width: 320px;
+    height: 100%;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+  .dropdownContainer {
+    width: 320px;
+  }
+  .title {
+    margin-bottom: 16px;
+  }
+  .listItem {
+    width: 320px;
+    gap: 8px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .typeCarBody {
+    display: flex;
+    width: 320px;
+    justify-content: unset;
+    margin-bottom: 32px;
+    flex-direction: column;
+  }
+  .selectBrand {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    justify-content: unset;
+    margin-bottom: 32px;
+  }
+  .listItemBrand {
+    width: 320px;
+  }
+
+  .itemDropdownBoxAddBrand {
+    width: 290px;
+  }
+  .listTypeFuil {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listColor {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listTechCondition {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .lisCarMileage {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listMotorPower {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listMachineDrive {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .howManyDoors {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listNumberSeats {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listNumberAxles {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listWheelConfiguration {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .listCountryDelivery {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+    margin-bottom: 32px;
+  }
+  .itemdropdowncontainer {
+    width: 320px;
+  }
+  .itemdropdownbox {
+    width: 320px;
+  }
+  .listSelectTitle {
+    justify-content: unset;
+    flex-direction: column;
+    width: 320px;
+  }
+  .listItemSelectTitle {
+    position: relative;
+    width: 320px;
+    height: 36px;
+    border-radius: 32px;
+    background-color: #f0f0f0;
+    margin-bottom: 32px;
+  }
+  .resultFilterShow {
+    order: 1;
+    width: 320px;
+    background-position: right 114px center;
+    margin-right: 0;
+  }
+  .resultFilterShow:hover {
+    background-position: right 114px center;
+  }
+  .resultFilter {
+    margin-top: 32px;
+    height: 120px;
+    flex-wrap: wrap-reverse;
+  }
+  .hide {
+    display: none;
+  }
+  .selected {
+    background-color: #797979;
+    color: #feffff;
+  }
+  .active {
+    background-image: url('../../assets/icons/vector-arrow-up.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+@include onDesktop {
+  .AdvSearchFilter {
+    &_container {
+      width: 1024px;
+    }
+  }
+  .itemdropdownbox {
+    width: 384px;
+  }
+  .list {
+    width: 100%;
+  }
+  .listItem {
+    width: 704px;
+  }
+
+  .type:checked + label {
+    background: #797979;
+    color: #ffffff;
+  }
+  .itemType:hover {
+    background: #797979;
+    color: #ffffff;
+  }
+  .typeCarBody {
+    display: flex;
+    width: 944px;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  /*блок Бренд/Модель/Рік початок */
+  .dropdownContainer {
+    width: 384px;
+  }
+  .selectBrand {
+    display: flex;
+    width: 944px;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  .listItemBrand {
+    width: 704px;
+    display: flex;
+  }
+  /*Тип палива*/
+  .listTypeFuil {
+    display: flex;
+    justify-content: space-between;
+
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Колір */
+  .listColor {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  .btnShowMore {
+    width: 139px;
+    height: 40px;
+    padding: 12px 10px;
+    color: #434343;
+    background-color: #feffff;
+    border-radius: 32px;
+    border: 1px solid #434343;
+  }
+  .btnShowMore:hover {
+    background-color: #e4e4e4;
+    color: #434343;
+  }
+  .selected {
+    background-color: #434343;
+    color: #feffff;
+  }
+  /*Технічний стан */
+  .listTechCondition {
+    display: flex;
+    justify-content: space-between;
+
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*пробіг*/
+  .lisCarMileage {
+    display: flex;
+    justify-content: space-between;
+
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Потужність двигуна*/
+  .listMotorPower {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Привід*/
+  .listMachineDrive {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Кількість дверей */
+  .howManyDoors {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Кількість місць */
+  .listNumberSeats {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Кількість осей */
+  .listNumberAxles {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Конфігурація коліс */
+  .listWheelConfiguration {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  /*Країна з якої достваили*/
+  .listCountryDelivery {
+    display: flex;
+    justify-content: space-between;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  .itemdropdowncontainer {
+    width: 704px;
+  }
+  /*Заголовок*/
+  .listSelectTitle {
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+    width: 944px;
+    margin-bottom: 32px;
+  }
+  .itemTypeYes {
+    position: absolute;
+    width: 187px;
+    height: 32px;
+    background-color: #f0f0f0;
+    padding: 6px 81px;
+    border-radius: 32px;
+    color: black;
+    & input {
+      display: none;
+    }
+    border: none;
+    top: 2px;
+    right: 2px;
+  }
+  .itemTypeNo {
+    position: absolute;
+    width: 187px;
+    height: 32px;
+    background-color: #f0f0f0;
+    padding: 6px 81px;
+    border-radius: 32px;
+    & input {
+      display: none;
+    }
+    border: none;
+    left: 2px;
+    top: 2px;
+    z-index: 1;
+    color: black;
+  }
+  .selected {
+    background-color: #797979;
+    color: white;
+  }
+  .listItemSelectTitle {
+    position: relative;
+    width: 380px;
+    height: 100%;
+    border-radius: 32px;
+    background-color: #f0f0f0;
+  }
+  // блок з кнопками Показати - Скинути фільтр
+  .resultFilter {
+    width: 100%;
+    height: 88px;
+    background: #797979;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .resultFilterShow {
+    letter-spacing: 0.15px;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 14px;
+    width: 124px;
+    height: 40px;
+    background: #797979;
+    border-radius: 32px;
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 44px;
+    border: none;
+    color: white;
+    background-image: url('../../assets/icons/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+  }
+  .resultFilterReset {
+    letter-spacing: 0.15px;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 16px;
+    height: 40px;
+    background: inherit;
+    border-radius: 32px;
+    padding: 10px 16px;
+    border: none;
+    color: white;
+  }
+  .resultFilterShow:hover {
+    background: white;
+    color: black;
+    background-image: url('../../assets/icons/vector-arrow-show.svg');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+  }
+  .resultFilterReset:hover {
+    background: white;
+    color: black;
+  }
+}
